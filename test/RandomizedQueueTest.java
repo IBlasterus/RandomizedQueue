@@ -22,7 +22,7 @@ class RandomizedQueueTest {
     @DisplayName("when new")
     class WhenNew {
         @BeforeEach
-        void createNewDeque() {
+        void createNewRandomizedQueue() {
             queue = new RandomizedQueue<>();
         }
 
@@ -62,7 +62,7 @@ class RandomizedQueueTest {
             Iterator<Object> iterator;
 
             @BeforeEach
-            void createDequeIterator() {
+            void createRandomizedQueueIterator() {
                 iterator = queue.iterator();
             }
 
@@ -113,7 +113,7 @@ class RandomizedQueueTest {
                 Iterator<Object> iterator;
 
                 @BeforeEach
-                void createDequeIterator() {
+                void createRandomizedQueueIterator() {
                     iterator = queue.iterator();
                 }
 
@@ -158,11 +158,11 @@ class RandomizedQueueTest {
 
             @Nested
             @DisplayName("after add some elements - iterator")
-            class AfterAddFirstIterator {
+            class AfterAddSomeIterator {
                 Iterator<Object> iterator;
 
                 @BeforeEach
-                void createDequeIterator() {
+                void createRandomizedQueueIterator() {
                     iterator = queue.iterator();
                 }
 
@@ -231,11 +231,11 @@ class RandomizedQueueTest {
 
             @Nested
             @DisplayName("when add some elements and then remove all - iterator")
-            class AfterAddFirstIterator {
+            class AfterAddSomeAndRemoveAllIterator {
                 Iterator<Object> iterator;
 
                 @BeforeEach
-                void createDequeIterator() {
+                void createRandomizedQueueIterator() {
                     iterator = queue.iterator();
                 }
 
