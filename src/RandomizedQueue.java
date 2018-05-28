@@ -144,7 +144,10 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         @Override
         public Item next() {
             if (this.iLastPointer < 0) throw new NoSuchElementException("no more items in iteration");
-            Item item = items[this.iLastPointer];
+            int randomPointer = StdRandom.uniform(this.iLastPointer + 1);
+            Item item = items[this.iPointers[randomPointer]];
+            this.iPointers[randomPointer] = this.iPointers[this.iLastPointer];
+            this.iPointers[this.iLastPointer] = -1; // sort of null
             this.iLastPointer--;
             return item;
         }
