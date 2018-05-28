@@ -159,6 +159,6 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
      * @param args arguments
      */
     public static void main(String[] args) {
-
+        // UncommentedEmptyMethodBody
     }
 }
