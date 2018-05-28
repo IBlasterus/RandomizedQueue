@@ -59,7 +59,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
      */
     public void enqueue(Item item) {
         if (item == null) throw new IllegalArgumentException("item can't be null");
-        if (this.lastPointer + 1 > this.pointers.length - 1) this.resize(2 * this.pointers.length);
+        if (this.tail + 2 > this.pointers.length) this.resize(2 * this.pointers.length);
         this.lastPointer++;
         this.pointers[this.lastPointer] = this.tail;
         this.items[this.tail] = item;
@@ -106,7 +106,6 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
      * @param capacity new size of arrays
      */
     private void resize(int capacity) {
-        if (this.isEmpty()) throw new IndexOutOfBoundsException("you can't resize empty queue");
         if (capacity < 1) throw new IllegalArgumentException("capacity can be more than 0");
         if (capacity < this.lastPointer + 1)
             throw new IllegalArgumentException("capacity can be more than number of entity in queue");
@@ -157,6 +156,6 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
      * @param args arguments
      */
     public static void main(String[] args) {
-
+        System.exit(0);
     }
 }

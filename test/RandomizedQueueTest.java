@@ -1,3 +1,4 @@
+import edu.princeton.cs.algs4.StdRandom;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -250,6 +251,25 @@ class RandomizedQueueTest {
                 void throwsExceptionWhenNext() {
                     assertThrows(NoSuchElementException.class, () -> iterator.next());
                 }
+            }
+        }
+
+        @Nested
+        @DisplayName("Check random calls to enqueue() and dequeue()")
+        class RandomEnqueueAndDequeue {
+            @Test
+            @DisplayName("Check random calls to enqueue() and dequeue()")
+            void randomEnqueueAndDeque() {
+                assertAll(() -> {
+                    for(int i = 0; i < 1000; i++) {
+                        if (StdRandom.uniform() > 0.5) {
+                            queue.enqueue("An object");
+                        } else {
+                            if (queue.isEmpty()) assertThrows(NoSuchElementException.class, () -> queue.dequeue());
+                            else assertEquals("An object", queue.dequeue());
+                        }
+                    }
+                });
             }
         }
     }
