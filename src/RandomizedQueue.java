@@ -11,22 +11,22 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     /**
      * Pointers
      */
-    int[] pointers;
+    private int[] pointers;
 
     /**
      * Items
      */
-    Item[] items;
+    private Item[] items;
 
     /**
      * Last pointer
      */
-    int lastPointer;
+    private int lastPointer;
 
     /**
      * Pointer to the end of the queue
      */
-    int tail;
+    private int tail;
 
     /**
      * Construct an empty randomized queue
